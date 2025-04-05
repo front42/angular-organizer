@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 404px;
+  height: 577px;
+  padding: 25px 5px;
+  background: url("/angular-logo-gif.gif") no-repeat center center / contain;
+}
+
+h1 {
+  font-size: 48px;
+  background: linear-gradient(90deg, #f50e47, #923dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 237px;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:not(.active):hover {
+  text-shadow: 0 0 3px greenyellow;
+}
+
+.active {
+  color: greenyellow;
+  cursor: default;
+}
