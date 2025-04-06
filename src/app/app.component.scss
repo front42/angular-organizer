@@ -3,10 +3,10 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 404px;
   height: 577px;
   padding: 25px 5px;
-  background: url("../assets/angular-logo-gif.gif") no-repeat center center / contain;
+  background: url('../assets/angular-logo-gif.gif') no-repeat center center /
+    contain;
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.nav {
+nav {
   display: flex;
   justify-content: space-between;
   width: 237px;
@@ -37,4 +37,20 @@ a:not(.active):hover {
 .active {
   color: greenyellow;
   cursor: default;
+}
+
+@media screen and (max-width: 404px) {
+  main {
+    height: 453px;
+    padding: 15px 5px;
+  }
+
+  h1 {
+    font-size: 37px;
+  }
+
+  nav {
+    width: 252px;
+    font-size: 29px;
+  }
 }
