@@ -1,7 +1,7 @@
 # <img src="./public/favicon.ico" alt="Angular Organizer" height="17"/>&#8239;angular-organizer
-Thanks for your attention to this simple project -  
-to accept the new Angular makeup and hair as they are.    
-***https://front42.github.io/angular--organizer***  
+Thanks for your attention to this work in progress -  
+to accept the new Angular makeup and hair as they are.  
+***https://front42.github.io/angular-organizer***  
 
 <img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" height="17"/>  
 
