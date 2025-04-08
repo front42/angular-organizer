@@ -1,1 +1,7 @@
-<h1>Calc will be here:)</h1>
+<div class="calculator">
+  <button class="close" (click)="goHome()">✕</button>
+  <div class="screen" [style.fontSize]="screenValueFontSize">{{screenValue}}</div>
+  <div class="numpad">
+    <button class="numpad-btn" *ngFor="let value of numpadButtons" (click)="makeCalc(value)">{{value}}</button>
+  </div>
+</div>
