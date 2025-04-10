@@ -2,6 +2,7 @@
   <main class="main">
     <h1>Angular Organizer</h1>
     <router-outlet></router-outlet>
+    <app-watch *ngIf="showWatch"></app-watch>
     <nav class="nav">
       <a routerLink="calc" routerLinkActive="active">calc</a>
       <a routerLink="note" routerLinkActive="active">note</a>
