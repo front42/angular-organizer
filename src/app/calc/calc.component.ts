@@ -10,60 +10,83 @@ import { NgFor } from '@angular/common';
   imports: [NgFor],
 })
 export class CalcComponent {
-  public numpad: string[] = ['AC', '+/-', '%', '÷', '7', '8', '9', '×', '4', '5', '6', '–', '1', '2', '3', '+', '0', '.', '='];
-  public screenValue: string = '0';
-  public screenValueFontSize: string = '68px';
-
-  public firstArg: string = '';
-  public secondArg: string = '';
-  public operator: string = '';
+  protected numpad: string[] = ['AC', '+/-', '%', '÷', '7', '8', '9', '×', '4', '5', '6', '–', '1', '2', '3', '+', '0', '.', '='];
+  protected screenValue: string = '0';
+  protected screenValueFontSize: string = '68px';
+  private firstArg: string = '';
+  private secondArg: string = '';
+  private operator: string = '';
+  private calcFinished: boolean = false;
 
   constructor(private router: Router) {}
 
-  public goHome(): void {
+  protected goHome(): void {
     this.router.navigate(['/']);
   }
 
-  public makeCalc(value: string): void {
+  protected makeCalc(value: string): void {
     let isDecimalPart: boolean = this.screenValue.includes('.');
 
     switch (value) {
       case 'AC':
         this.reset();
+        this.screenValue = '0';
         break;
       case '+/-':
-        if (this.screenValue) this.screenValue = String(+this.screenValue * -1);
+        if (isNaN(+this.screenValue)) return;
+        this.screenValue = String(+this.screenValue * -1);
         break;
       case '%':
+        if (isNaN(+this.screenValue)) return;
         this.screenValue = String(+this.screenValue / 100);
+        this.calcFinished = true;
         break;
       case '÷':
       case '×':
       case '–':
       case '+':
-      case '=':
+        if (isNaN(+this.screenValue)) return;
+        this.calcFinished = false;
         if (this.operator && !this.secondArg) {
           this.operator = value;
-          console.log('Operator: ' + this.operator);
+          console.log('operator: ' + this.operator); // console.log to remove
           return;
         }
         if (this.firstArg && this.operator) {
           this.secondArg = this.screenValue;
-          console.log('second: ' + this.secondArg);
+          console.log('second: ' + this.secondArg); // console.log to remove
           this.getResult();
         }
         if (!this.firstArg) {
           this.firstArg = this.screenValue;
-          console.log('first: ' + this.firstArg);
+          console.log('first: ' + this.firstArg); // console.log to remove
         }
         this.operator = value;
-        console.log('Operator: ' + this.operator);
+        console.log('operator: ' + this.operator); // console.log to remove
+        break;
+      case '=':
+        if (isNaN(+this.screenValue)) return;
+        this.calcFinished = true;
+        if (this.firstArg && this.operator) {
+          this.secondArg = this.screenValue;
+          console.log('second: ' + this.secondArg); // console.log to remove
+          this.getResult();
+        }
+        this.reset();
         break;
       case '.':
-        if (!isDecimalPart) this.screenValue += '.';
+        if (!isDecimalPart && !isNaN(+this.screenValue) && !this.calcFinished) this.screenValue += '.';
         break;
       default:
-        if (isNaN(+this.screenValue)) return;
+        if (isNaN(+this.screenValue)) {
+          this.reset;
+          this.screenValue = '0';
+        }
+        if (this.calcFinished) {
+          this.reset();
+          this.screenValue = '0';
+          this.calcFinished = false;
+        }
         if (this.screenValue !== '0') {
           this.screenValue += value;
           if (this.screenValue.length > 14) this.screenValue = 'Hey, stop it please!';
@@ -81,14 +104,11 @@ export class CalcComponent {
     let result: number | string = 0;
     const firstArg = parseFloat(this.firstArg);
     const secondArg = parseFloat(this.secondArg);
+    if (!firstArg || !secondArg) return;
 
     switch (this.operator) {
       case '÷':
-        if (secondArg) {
-          result = firstArg / secondArg;
-        } else {
-          result = `Can't divide by zero`;
-        }
+        result = secondArg ? firstArg / secondArg : `Can't divide by zero`;
         break;
       case '×':
         result = firstArg * secondArg;
@@ -105,9 +125,6 @@ export class CalcComponent {
   }
 
   private reset(): void {
-    this.screenValue = '0';
-    this.firstArg = '';
-    this.secondArg = '';
-    this.operator = '';
+    this.firstArg = this.secondArg = this.operator = '';
   }
 }

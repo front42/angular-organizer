@@ -1,4 +1,4 @@
-# <img src="./public/favicon.ico" alt="Angular Organizer" height="17"/>&#8239;angular-organizer
+# <img src="./src/favicon.png" alt="Angular Organizer" height="17"/>&#8239;angular-organizer
 Thanks for your attention to this work in progress -  
 to accept the new Angular ultraviolet makeup and hair as they are.  
 ***https://front42.github.io/angular-organizer***  
