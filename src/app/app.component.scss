@@ -12,6 +12,7 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  // appearance: none;
 }
 
 h1 {
@@ -55,7 +56,6 @@ a:not(.active):hover {
   }
 
   nav {
-    width: 252px;
-    font-size: 29px;
+    width: 222px;
   }
 }

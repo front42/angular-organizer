@@ -1,1 +1,17 @@
-<h1>Note will be here:)</h1>
+<div class="notepad">
+  <button class="close" (click)="goHome()">✕</button>
+  <button *ngIf="textareaValue" class="search" (click)="searchNote()">🔍︎</button>
+  <button *ngIf="textareaValue" class="save" (click)="saveNote()">✓</button>
+  <button *ngIf="textareaValue" class="remove" (click)="removeNote()">🗑</button>
+  <textarea
+    class="textarea"
+    [(ngModel)]="textareaValue"
+    (input)="inputHandler()"
+    placeholder="Search 🔍︎ or save ✓"
+    #textarea
+  ></textarea>
+  <span *ngIf="!notes.length" class="no-notes">Write the first note</span>
+  <div class="notes">
+    <div class="note" *ngFor="let note of filteredNotes; let i = index" (click)="showNote(note, i)">{{note}}</div>
+  </div>
+</div>

@@ -17,7 +17,7 @@
   color: #923dff;
   border: none;
   background-color: transparent;
-  transition: 0.3s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -33,22 +33,22 @@
 .screen {
   display: flex;
   justify-content: flex-end;
-  word-break: break-all;
   flex-wrap: wrap;
-  overflow: hidden;
-  line-height: 0.99;
-  font-weight: 300;
-  text-align: right;
-  padding: 0 22px 0 0;
-  font-size: 68px;
   width: 320px;
   height: 68px;
+  padding: 0 22px 0 0;
+  font-size: 68px;
+  font-weight: 300;
+  text-align: right;
+  word-break: break-all;
+  line-height: 0.99;
+  overflow: hidden;
 }
 
 .numpad {
-  padding: 0 14px 0 10px;
   width: 320px;
   height: 360px;
+  padding: 0 14px 0 10px;
 }
 
 .numpad-btn {
@@ -57,12 +57,20 @@
   height: 61px;
   font-size: 30px;
   font-weight: 300;
-  color: #f50e47;
+  color: #252525;
   border: none;
   border-radius: 50px;
   background-color: azure;
   transition: 0.3s;
   cursor: pointer;
+}
+
+.numpad-btn:nth-child(1),
+.numpad-btn:nth-child(2),
+.numpad-btn:nth-child(3),
+.numpad-btn:nth-child(4n),
+.numpad-btn:nth-child(19) {
+  color: #f50e47;
 }
 
 .numpad-btn:nth-child(17) {
@@ -83,8 +91,8 @@
 @media screen and (max-width: 404px) {
   .calculator {
     width: 310px;
-    height: 344px;
-    padding-bottom: 2px;
+    height: 349px;
+    padding-bottom: 3px;
   }
 
   .close {
@@ -108,7 +116,6 @@
     width: 50px;
     height: 50px;
     font-size: 28px;
-    font-weight: 300;
   }
 
   .numpad-btn:nth-child(17) {
