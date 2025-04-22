@@ -20,10 +20,6 @@ export class CalcComponent {
 
   constructor(private router: Router) {}
 
-  protected goHome(): void {
-    this.router.navigate(['/']);
-  }
-
   protected makeCalc(value: string): void {
     let isDecimalPart: boolean = this.screenValue.includes('.');
 

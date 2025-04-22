@@ -1,14 +1,13 @@
 <div class="notepad">
-  <button class="close" (click)="goHome()">✕</button>
   <button *ngIf="textareaValue" class="search" (click)="searchNote()">🔍︎</button>
   <button *ngIf="textareaValue" class="save" (click)="saveNote()">✓</button>
   <button *ngIf="textareaValue" class="remove" (click)="removeNote()">🗑</button>
   <textarea
+    #textarea
     class="textarea"
+    placeholder="Search🔍︎ or save✓ "
     [(ngModel)]="textareaValue"
     (input)="inputHandler()"
-    placeholder="Search 🔍︎ or save ✓"
-    #textarea
   ></textarea>
   <span *ngIf="!notes.length" class="no-notes">Write the first note</span>
   <div class="notes">

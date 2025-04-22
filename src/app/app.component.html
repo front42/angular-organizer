@@ -1,8 +1,9 @@
 <div class="container">
   <main class="main">
     <h1>Angular Organizer</h1>
+    <button class="close" *ngIf="!isMainPage" (click)="goMainPage()">✕</button>
     <router-outlet></router-outlet>
-    <app-watch *ngIf="showWatch"></app-watch>
+    <app-watch *ngIf="isMainPage"></app-watch>
     <nav class="nav">
       <a routerLink="calc" routerLinkActive="active">calc</a>
       <a routerLink="note" routerLinkActive="active">note</a>

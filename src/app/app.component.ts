@@ -13,13 +13,17 @@ import { WatchComponent } from './watch/watch.component';
   imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive, WatchComponent],
 })
 export class AppComponent implements OnInit {
-  public showWatch: boolean = true;
+  protected isMainPage: boolean = true;
 
   constructor(private router: Router) {}
+
+  protected goMainPage(): void {
+    this.router.navigate(['/']);
+  }
 
   ngOnInit(): void {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => (this.showWatch = this.router.url === '/'));
+      .subscribe(() => (this.isMainPage = this.router.url === '/'));
   }
 }

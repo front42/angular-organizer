@@ -8,28 +8,6 @@
   background-color: #252525;
 }
 
-.close {
-  position: absolute;
-  top: -15px;
-  right: 0px;
-  font-size: 27px;
-  font-weight: bold;
-  color: #923dff;
-  border: none;
-  background-color: transparent;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #f50e47;
-  text-shadow: 0 0 2px #f50e47;
-}
-
-.close:active {
-  text-shadow: 0 0 7px #f50e47;
-}
-
 .screen {
   display: flex;
   justify-content: flex-end;
@@ -90,13 +68,9 @@
 
 @media screen and (max-width: 404px) {
   .calculator {
-    width: 310px;
+    width: 300px;
     height: 349px;
-    padding-bottom: 3px;
-  }
-
-  .close {
-    right: 2px;
+    padding-bottom: 4px;
   }
 
   .screen {

@@ -1,1 +1,20 @@
-<h1>Todo will be here:)</h1>
+<div class="todolist">
+  <button *ngIf="textareaValue" class="save" (click)="addTodo()">✓</button>
+  <textarea
+    #textarea
+    class="textarea"
+    placeholder="Write&#9998; and save✓ "
+    [(ngModel)]="textareaValue"
+    (input)="tuneSize()"
+  ></textarea>
+  <span *ngIf="!todos.length" class="no-todos">Get some rest, workaholic</span>
+  <div class="todos">
+    @for (todo of todos; track $index) {
+      <div class="todo-wrapper">
+        <input type="checkbox" class="checkbox" [(ngModel)]="todo.done" />
+        <div [ngClass]="{ todo: true, done: todo.done }" (click)="showTodo($index)">{{ todo.description }}</div>
+        <button class="remove" (click)="removeTodo($index)">🗑</button>
+      </div>
+    }
+  </div>
+</div>
