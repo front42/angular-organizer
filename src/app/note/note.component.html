@@ -11,6 +11,6 @@
   ></textarea>
   <span *ngIf="!notes.length" class="no-notes">Write the first note</span>
   <div class="notes">
-    <div class="note" *ngFor="let note of filteredNotes; let i = index" (click)="showNote(note, i)">{{note}}</div>
+    <div class="note" *ngFor="let note of filteredNotes; let i = index" (click)="showNote(note, i)">{{ note }}</div>
   </div>
 </div>

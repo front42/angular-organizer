@@ -1,6 +1,6 @@
 <div class="calculator">
-  <div class="screen" [style.fontSize]="screenValueFontSize">{{screenValue}}</div>
+  <div class="screen" [style.fontSize]="screenValueFontSize">{{ screenValue }}</div>
   <div class="numpad">
-    <button class="numpad-btn" *ngFor="let value of numpad" (click)="makeCalc(value)">{{value}}</button>
+    <button class="numpad-btn" *ngFor="let value of numpad" (click)="makeCalc(value)">{{ value }}</button>
   </div>
 </div>

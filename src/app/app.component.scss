@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 main {
   position: relative;
   display: flex;
@@ -6,7 +13,7 @@ main {
   align-items: center;
   height: 577px;
   padding: 25px 5px;
-  background: url("../assets/angular-gif-logo.gif") no-repeat center center / contain;
+  background: url('../assets/angular-gif-logo.gif') no-repeat center center / contain;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

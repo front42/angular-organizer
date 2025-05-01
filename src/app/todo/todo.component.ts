@@ -50,11 +50,10 @@ export class TodoComponent implements OnInit {
   }
 
   protected removeTodo(index: number): void {
-    if (this.chosenTodoIndex === index) {
-      this.chosenTodoIndex = null;
-      this.textareaValue = '';
-    }
+    this.textareaValue = '';
+    this.chosenTodoIndex = null;
     this.dataService.removeTodo(index);
+    setTimeout(() => this.tuneSize(), 10);
   }
 
   ngOnInit(): void {
