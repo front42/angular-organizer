@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  standalone: true,
   selector: 'app-watch',
   templateUrl: './watch.component.html',
   styleUrl: './watch.component.scss',
