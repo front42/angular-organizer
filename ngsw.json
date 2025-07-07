@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1750318569542,
+  "timestamp": 1751878770993,
   "index": "https://front42.github.io/angular-organizer/index.html",
   "assetGroups": [
     {
@@ -13,9 +13,9 @@
       "urls": [
         "https://front42.github.io/angular-organizer/favicon.png",
         "https://front42.github.io/angular-organizer/index.html",
-        "https://front42.github.io/angular-organizer/main.f519b5ffb742f05b.js",
+        "https://front42.github.io/angular-organizer/main.083a3273ec72d113.js",
         "https://front42.github.io/angular-organizer/manifest.webmanifest",
-        "https://front42.github.io/angular-organizer/polyfills.83edee87383a3db5.js",
+        "https://front42.github.io/angular-organizer/polyfills.13c77b813af0dc48.js",
         "https://front42.github.io/angular-organizer/runtime.30e5258226aa9353.js",
         "https://front42.github.io/angular-organizer/styles.f8f1d1ebab2a2ec8.css"
       ],
@@ -42,10 +42,10 @@
     "https://front42.github.io/angular-organizer/assets/angular-gif-logo.gif": "1e112a27acbb62594fa7abf0390099c3bb60ccd8",
     "https://front42.github.io/angular-organizer/assets/icons/icon-192x192.png": "5e73aa3f64d50d23a73186d11c6804aafcf3c93c",
     "https://front42.github.io/angular-organizer/favicon.png": "c798b7f0af9d5d11ec0b6b76b5d63cdb27162394",
-    "https://front42.github.io/angular-organizer/index.html": "0e746a3b1330be4a0af4b1bff79aa70088d57785",
-    "https://front42.github.io/angular-organizer/main.f519b5ffb742f05b.js": "69c2f19cb31f783a8030e15fc4d55ebccf2313b4",
+    "https://front42.github.io/angular-organizer/index.html": "aaed5380cbf99190445c47032101069065d7fcac",
+    "https://front42.github.io/angular-organizer/main.083a3273ec72d113.js": "2e5d67fb8b3105c11a3b51788c698a86339bb7b2",
     "https://front42.github.io/angular-organizer/manifest.webmanifest": "80169c03159162681ca8b658425c7fad6350c345",
-    "https://front42.github.io/angular-organizer/polyfills.83edee87383a3db5.js": "eb42fcef241b784d7f01866656268aab4b316c11",
+    "https://front42.github.io/angular-organizer/polyfills.13c77b813af0dc48.js": "96c810fe48672b4710237a87cbed03698d2c4d9a",
     "https://front42.github.io/angular-organizer/runtime.30e5258226aa9353.js": "28033caa18c08cc6f77b4ee880e7270e86fc6474",
     "https://front42.github.io/angular-organizer/styles.f8f1d1ebab2a2ec8.css": "ad3aaa15d17605d53afe4a281fc4b2d7dff38f25"
   },
