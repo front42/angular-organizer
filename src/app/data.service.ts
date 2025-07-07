@@ -7,16 +7,16 @@ export interface ITodo {
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  private notes: string[] = [
-    `Let's make the first note!`,
-    'Between the 1st and the 2nd - just a second!',
-    'What did they say about the Trinity?',
+  private defaultNotes: string[] = [
+    `Let's make the first note!\nBut about what...\n...a stone, a leaf, an unfound door; of a stone, a leaf, a door. And of all the forgotten faces.`,
+    'Tomorrow we will run faster, stretch out our arms farther... And then one fine morning -\nSo we beat on, boats against the current, borne back ceaselessly into the past.',
+    `You rise, you fall, you're down then you rise again - what don't kill you makes you more strong.`,
     'Lorem ipsum, of course.',
     'The lowest note.',
     'Hidden note.',
   ];
 
-  private todos: ITodo[] = [
+  private defaultTodos: ITodo[] = [
     { description: 'eat', done: false },
     { description: 'sleep', done: true },
     { description: 'play', done: false },
@@ -27,35 +27,61 @@ export class DataService {
 
   constructor() {}
 
+  public updateNotes(notes: string[]): void {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }
+
   public getNotes(): string[] {
-    return this.notes;
+    return JSON.parse(localStorage.getItem('notes') as string) || this.defaultNotes;
   }
 
   public addNote(note: string): void {
-    this.notes.unshift(note);
+    const notes = this.getNotes();
+    notes.unshift(note);
+    this.updateNotes(notes);
   }
 
   public editNote(index: number, editedNote: string): void {
-    this.notes.splice(index, 1, editedNote);
+    const notes = this.getNotes();
+    notes.splice(index, 1, editedNote);
+    this.updateNotes(notes);
   }
 
   public removeNote(index: number): void {
-    this.notes.splice(index, 1);
+    const notes = this.getNotes();
+    notes.splice(index, 1);
+    this.updateNotes(notes);
+  }
+
+  public updateTodos(todos: ITodo[]): void {
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 
   public getTodos(): ITodo[] {
-    return this.todos;
+    return JSON.parse(localStorage.getItem('todos') as string) || this.defaultTodos;
   }
 
   public addTodo(todo: ITodo): void {
-    this.todos.unshift(todo);
+    const todos = this.getTodos();
+    todos.unshift(todo);
+    this.updateTodos(todos);
   }
 
   public editTodo(index: number, newDescription: string): void {
-    this.todos[index].description = newDescription;
+    const todos = this.getTodos();
+    todos[index].description = newDescription;
+    this.updateTodos(todos);
   }
 
   public removeTodo(index: number): void {
-    this.todos.splice(index, 1);
+    const todos = this.getTodos();
+    todos.splice(index, 1);
+    this.updateTodos(todos);
+  }
+
+  public doneChange(index: number) {
+    const todos = this.getTodos();
+    todos[index].done = !todos[index].done;
+    this.updateTodos(todos);
   }
 }

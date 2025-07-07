@@ -6,15 +6,13 @@ import { Router } from '@angular/router';
 import { DataService, ITodo } from '../data.service';
 
 @Component({
-  standalone: true,
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss',
   imports: [NgIf, NgClass, FormsModule],
 })
 export class TodoComponent implements OnInit {
-  @ViewChild('textarea')
-  protected textarea!: ElementRef;
+  @ViewChild('textarea') protected textarea!: ElementRef;
   protected textareaValue: string = '';
   protected todos: ITodo[] = [];
   protected chosenTodoIndex: number | null = null;
@@ -40,12 +38,15 @@ export class TodoComponent implements OnInit {
     if (this.chosenTodoIndex !== null) {
       const newDescription: string = this.textareaValue;
       this.dataService.editTodo(this.chosenTodoIndex, newDescription);
+      this.todos = this.dataService.getTodos();
     } else {
       const newTodo: ITodo = { description: this.textareaValue, done: false };
       this.dataService.addTodo(newTodo);
+      this.todos = this.dataService.getTodos();
     }
     this.textareaValue = '';
     this.chosenTodoIndex = null;
+    this.todos = this.dataService.getTodos();
     setTimeout(() => this.tuneSize(), 10);
   }
 
@@ -53,7 +54,13 @@ export class TodoComponent implements OnInit {
     this.textareaValue = '';
     this.chosenTodoIndex = null;
     this.dataService.removeTodo(index);
+    this.todos = this.dataService.getTodos();
     setTimeout(() => this.tuneSize(), 10);
+  }
+
+  protected onDoneChange(index: number): void {
+    this.dataService.doneChange(index);
+    this.todos = this.dataService.getTodos();
   }
 
   ngOnInit(): void {

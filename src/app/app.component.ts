@@ -6,7 +6,6 @@ import { filter } from 'rxjs/operators';
 import { WatchComponent } from './watch/watch.component';
 
 @Component({
-  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

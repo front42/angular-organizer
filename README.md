@@ -1,9 +1,9 @@
-# <img src="./src/favicon.png" alt="Angular Organizer" height="17"/>&#8239;angular-organizer
+# <img src="./src/favicon.png" alt="Angular Organizer" width="17" height="17"/>&#8239;angular-organizer
 Thanks for your attention to this work in progress -  
 to accept the new Angular ultraviolet makeup and hair as they are.  
 ***https://front42.github.io/angular-organizer***  
 
-<img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" height="17"/>  
+<img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" width="107" height="40"/>  
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
