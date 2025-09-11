@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
 
 @Component({
-  standalone: true,
   selector: 'app-calc',
   templateUrl: './calc.component.html',
   styleUrl: './calc.component.scss',
@@ -45,27 +44,27 @@ export class CalcComponent {
         this.calcFinished = false;
         if (this.operator && !this.secondArg) {
           this.operator = value;
-          console.log('operator: ' + this.operator); // console.log to remove
+          // console.log('operator: ' + this.operator); // console.log to remove
           return;
         }
         if (this.firstArg && this.operator) {
           this.secondArg = this.screenValue;
-          console.log('second: ' + this.secondArg); // console.log to remove
+          // console.log('second: ' + this.secondArg); // console.log to remove
           this.getResult();
         }
         if (!this.firstArg) {
           this.firstArg = this.screenValue;
-          console.log('first: ' + this.firstArg); // console.log to remove
+          // console.log('first: ' + this.firstArg); // console.log to remove
         }
         this.operator = value;
-        console.log('operator: ' + this.operator); // console.log to remove
+        // console.log('operator: ' + this.operator); // console.log to remove
         break;
       case '=':
         if (isNaN(+this.screenValue)) return;
         this.calcFinished = true;
         if (this.firstArg && this.operator) {
           this.secondArg = this.screenValue;
-          console.log('second: ' + this.secondArg); // console.log to remove
+          // console.log('second: ' + this.secondArg); // console.log to remove
           this.getResult();
         }
         this.reset();

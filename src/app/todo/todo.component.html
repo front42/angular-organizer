@@ -11,7 +11,7 @@
   <div class="todos">
     @for (todo of todos; track $index) {
       <div class="todo-wrapper">
-        <input type="checkbox" class="checkbox" [(ngModel)]="todo.done" />
+        <input type="checkbox" class="checkbox" [checked]="todo.done" (change)="onDoneChange($index)" />
         <div [ngClass]="{ todo: true, done: todo.done }" (click)="showTodo($index)">{{ todo.description }}</div>
         <button class="remove" (click)="removeTodo($index)">🗑</button>
       </div>

@@ -6,15 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
 
 @Component({
-  standalone: true,
   selector: 'app-note',
   templateUrl: './note.component.html',
   styleUrl: './note.component.scss',
   imports: [NgFor, NgIf, FormsModule],
 })
 export class NoteComponent implements OnInit {
-  @ViewChild('textarea')
-  protected textarea!: ElementRef;
+  @ViewChild('textarea') protected textarea!: ElementRef;
   protected textareaValue: string = '';
   protected searchString: string = '';
   protected notes: string[] = [];
@@ -46,18 +44,14 @@ export class NoteComponent implements OnInit {
   }
 
   protected removeNote() {
-    if (this.chosenNoteIndex === null) {
-      this.reset();
-    }
     if (!this.searchString && this.chosenNoteIndex !== null) {
       this.dataService.removeNote(this.chosenNoteIndex);
-      this.reset();
     } else if (this.searchString && this.chosenNoteIndex !== null) {
       this.textareaValue = this.searchString;
       this.dataService.removeNote(this.notes.indexOf(this.filteredNotes[this.chosenNoteIndex]));
       this.searchNote();
-      if (!this.filteredNotes.length) this.reset();
     }
+    this.reset();
     setTimeout(() => this.tuneSize(), 10);
   }
 
@@ -72,6 +66,7 @@ export class NoteComponent implements OnInit {
     this.textarea.nativeElement.style.minHeight = 'auto';
     this.chosenNoteIndex = null;
     this.searchString = '';
+    this.notes = this.dataService.getNotes();
     this.filteredNotes = this.notes.slice();
   }
 
