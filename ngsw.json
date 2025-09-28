@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1759000734443,
+  "timestamp": 1759090470778,
   "index": "https://front42.github.io/angular-organizer/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://front42.github.io/angular-organizer/favicon.png",
         "https://front42.github.io/angular-organizer/index.html",
-        "https://front42.github.io/angular-organizer/main.0bef5c67ac7c8b0f.js",
+        "https://front42.github.io/angular-organizer/main.c0cd317df8fe614a.js",
         "https://front42.github.io/angular-organizer/manifest.webmanifest",
         "https://front42.github.io/angular-organizer/polyfills.13c77b813af0dc48.js",
         "https://front42.github.io/angular-organizer/runtime.30e5258226aa9353.js",
@@ -44,8 +44,8 @@
     "https://front42.github.io/angular-organizer/assets/front42.jpg": "eb98207fe74e6cab60e4634fe6595eadd8f1bcfa",
     "https://front42.github.io/angular-organizer/assets/icons/icon-192x192.png": "5e73aa3f64d50d23a73186d11c6804aafcf3c93c",
     "https://front42.github.io/angular-organizer/favicon.png": "c798b7f0af9d5d11ec0b6b76b5d63cdb27162394",
-    "https://front42.github.io/angular-organizer/index.html": "554e22e5404a60e70d818767a323b7bdb636e4e9",
-    "https://front42.github.io/angular-organizer/main.0bef5c67ac7c8b0f.js": "7cfbc4ca932dd7be04a5a54817aa05112b8dfd7b",
+    "https://front42.github.io/angular-organizer/index.html": "2946059368cadd4d8c2359686a4aad0cda9dc62c",
+    "https://front42.github.io/angular-organizer/main.c0cd317df8fe614a.js": "e19a5ee257a55855ccbc756e5387f971d6c277a3",
     "https://front42.github.io/angular-organizer/manifest.webmanifest": "80169c03159162681ca8b658425c7fad6350c345",
     "https://front42.github.io/angular-organizer/polyfills.13c77b813af0dc48.js": "96c810fe48672b4710237a87cbed03698d2c4d9a",
     "https://front42.github.io/angular-organizer/runtime.30e5258226aa9353.js": "28033caa18c08cc6f77b4ee880e7270e86fc6474",
